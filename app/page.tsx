@@ -71,7 +71,7 @@ export default function Home() {
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false)
   const [isHelpOpen, setIsHelpOpen] = useState(false)
   const [showHelpPage, setShowHelpPage] = useState(false);
-
+const [isLinuxOpen, setIsLinuxOpen] = useState(false)
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navbar */}
@@ -93,17 +93,51 @@ export default function Home() {
                 place.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group">
-                  <Download className="w-5 h-5 group-hover:animate-bounce" />
-                  Download for Windows
-                </button>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
 
-                <button className="bg-black text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2 group">
-                  <Terminal className="w-5 h-5" />
-                  Download for Linux
-                </button>
-              </div>
+  {/* 🪟 WINDOWS - direct download */}
+  <a
+    href="/downloads/WhatsApp-Automated-1.0.3.exe"
+    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
+  >
+    <Download className="w-5 h-5 group-hover:animate-bounce" />
+    Download for Windows
+  </a>
+
+  {/* 🐧 LINUX DROPDOWN */}
+  <div className="relative">
+
+    <button
+      onClick={() => setIsLinuxOpen(!isLinuxOpen)}
+      className="bg-black text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+    >
+      <Terminal className="w-5 h-5" />
+      Download for Linux
+    </button>
+
+    {isLinuxOpen && (
+      <div className="absolute mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
+
+        <a
+          href="/downloads/WhatsApp-Automated-1.0.3.AppImage"
+          className="block px-4 py-3 hover:bg-muted transition"
+        >
+          AppImage (Universal)
+        </a>
+
+        <a
+          href="/downloads/whatsapp-automated_1.0.3_amd64.deb"
+          className="block px-4 py-3 hover:bg-muted transition"
+        >
+          Debian (.deb)
+        </a>
+
+      </div>
+    )}
+
+  </div>
+
+</div>
 
               <div className="pt-4">
                 <p className="text-sm text-muted-foreground">
@@ -119,20 +153,15 @@ export default function Home() {
             </div>
 
             {/* Right Side Preview */}
-            <div className="relative h-96 md:h-[500px] bg-gradient-to-br from-primary/20 to-transparent rounded-2xl overflow-hidden border border-primary/30 flex items-center justify-center animate-float">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
-
-              <div className="text-center space-y-4 relative z-10">
-                <div className="w-24 h-24 bg-primary/20 rounded-full mx-auto flex items-center justify-center">
-                  <MessageSquare className="w-12 h-12 text-primary" />
-                </div>
-
-                <p className="text-muted-foreground">
-                  Desktop Application Preview
-                </p>
-              </div>
-            </div>
-          </div>
+           <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden border border-primary/30 animate-float bg-card">
+  <Image
+    src="/hero.png"
+    alt="WhatsApp Automation Desktop Preview"
+    fill
+    priority
+    className="object-contain p-4 hover:scale-105 transition-transform duration-300"
+  />
+</div>          </div>
         </div>
       </section>
 

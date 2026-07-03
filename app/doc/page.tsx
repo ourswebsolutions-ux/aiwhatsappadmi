@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Navbar } from '@/components/Navbar';
 import {
   Download,
   Smartphone,
@@ -245,14 +246,14 @@ function StepCard({ step }: { step: Step }) {
 export default function GuidancePage() {
   return (
     <div className="min-h-screen bg-background text-foreground pb-12 md:pb-16">
+          <Navbar />
+    
+
       {/* Header */}
-      <div className="border-b border-border bg-card/50">
+      <div className="border-b mt-20 border-border bg-card/50">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 md:py-16">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <CheckCircle className="w-4 h-4" />
-              STEP-BY-STEP GUIDE
-            </div>
+            
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
               Complete User Guide
             </h1>
@@ -297,12 +298,12 @@ export default function GuidancePage() {
                 href="#"
                 className="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 md:px-10 py-3.5 md:py-4 rounded-2xl transition-all active:scale-[0.985] text-base"
               >
-                Go to Dashboard
+                Need Help ?
                 <ArrowRight className="w-5 h-5" />
               </a>
 
               <a
-                href="#"
+                href="https://wa.me/+923245237429"
                 className="inline-flex items-center justify-center gap-3 border border-border hover:bg-card hover:border-primary/50 font-medium px-8 py-3.5 md:py-4 rounded-2xl transition-all text-base"
               >
                 Contact Support

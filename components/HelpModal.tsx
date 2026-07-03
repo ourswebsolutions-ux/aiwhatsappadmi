@@ -29,7 +29,7 @@ export function HelpModal({ isOpen, onClose }: HelpModalProps) {
           </p>
 
           <a
-            href="https://wa.me/15551234567"
+            href="https://wa.me/+923245237429"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-primary/10 border border-primary/30 rounded-xl hover:border-primary/60 hover:bg-primary/20 transition-all group cursor-pointer"
@@ -39,12 +39,12 @@ export function HelpModal({ isOpen, onClose }: HelpModalProps) {
             </div>
             <div>
               <p className="font-semibold">WhatsApp</p>
-              <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+              <p className="text-sm text-muted-foreground">+923245237429</p>
             </div>
           </a>
 
           <a
-            href="mailto:support@whatsappautomation.com"
+            href="mailto:info.axoraweb@gmail.com"
             className="flex items-center gap-4 p-4 bg-primary/10 border border-primary/30 rounded-xl hover:border-primary/60 hover:bg-primary/20 transition-all group cursor-pointer"
           >
             <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
@@ -52,12 +52,12 @@ export function HelpModal({ isOpen, onClose }: HelpModalProps) {
             </div>
             <div>
               <p className="font-semibold">Email</p>
-              <p className="text-sm text-muted-foreground">support@whatsappautomation.com</p>
+              <p className="text-sm text-muted-foreground">info.axoraweb@gmail.com</p>
             </div>
           </a>
 
           <a
-            href="https://whatsappautomation.com/docs"
+            href="/doc"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-primary/10 border border-primary/30 rounded-xl hover:border-primary/60 hover:bg-primary/20 transition-all group cursor-pointer"
@@ -72,7 +72,7 @@ export function HelpModal({ isOpen, onClose }: HelpModalProps) {
           </a>
 
           <a
-            href="tel:15551234567"
+            href="tel:+923245237429"
             className="flex items-center gap-4 p-4 bg-primary/10 border border-primary/30 rounded-xl hover:border-primary/60 hover:bg-primary/20 transition-all group cursor-pointer"
           >
             <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
@@ -80,7 +80,7 @@ export function HelpModal({ isOpen, onClose }: HelpModalProps) {
             </div>
             <div>
               <p className="font-semibold">Phone</p>
-              <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+              <p className="text-sm text-muted-foreground">+923245237429</p>
             </div>
           </a>
 
