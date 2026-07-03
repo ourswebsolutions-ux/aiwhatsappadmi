@@ -97,7 +97,7 @@ const [isLinuxOpen, setIsLinuxOpen] = useState(false)
 
   {/* 🪟 WINDOWS - direct download */}
   <a
-    href="/downloads/WhatsApp-Automated-1.0.3.exe"
+    href="/downloads/WhatsApp-Automated-Setup-1.0.3.exe"
     className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
   >
     <Download className="w-5 h-5 group-hover:animate-bounce" />
