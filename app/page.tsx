@@ -96,7 +96,7 @@ export default function Home() {
 
                 {/* 🪟 WINDOWS - direct download */}
                 <a
-                  href="https://github.com/ourswebsolutions-ux/whatsapp-automated/releases/download/v1.0.4/WhatsApp-Automated-Setup-1.0.4.exe"
+                  href="/download/windows"
                   download
                   className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
                 >
@@ -120,7 +120,7 @@ export default function Home() {
                     <div className="absolute mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
 
                       <a
-                        href="https://github.com/ourswebsolutions-ux/whatsapp-automated/releases/download/v1.0.4/WhatsApp-Automated-1.0.4.AppImage"
+                        href="download/linux/appimage"
                         download
                         className="block px-4 py-3 hover:bg-muted transition"
                       >
@@ -128,7 +128,7 @@ export default function Home() {
                       </a>
 
                       <a
-                        href="https://github.com/ourswebsolutions-ux/whatsapp-automated/releases/download/v1.0.4/whatsapp-automated_1.0.4_amd64.deb"
+                        href="/download/linux/deb"
                         download
                         className="block px-4 py-3 hover:bg-muted transition"
                       >
