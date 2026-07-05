@@ -117,26 +117,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "WhatsApp Automation",
-      operatingSystem: "Windows, Linux",
-      applicationCategory: "BusinessApplication",
-      url: "https://aiwhatsapp.axorawebsolutions.com",
-      image: "https://aiwhatsapp.axorawebsolutions.com/preview.png",
-      description:
-        "Professional WhatsApp Automation Software for bulk messaging contact management and campaign tracking.",
-      publisher: {
-        "@type": "Organization",
-        name: "AxoraWeb Solutions",
-      },
-    }),
-  }}
-/>
+     
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

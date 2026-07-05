@@ -71,7 +71,7 @@ export default function Home() {
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false)
   const [isHelpOpen, setIsHelpOpen] = useState(false)
   const [showHelpPage, setShowHelpPage] = useState(false);
-const [isLinuxOpen, setIsLinuxOpen] = useState(false)
+  const [isLinuxOpen, setIsLinuxOpen] = useState(false)
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navbar */}
@@ -82,9 +82,8 @@ const [isLinuxOpen, setIsLinuxOpen] = useState(false)
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold text-balance leading-tight">
-                WhatsApp 
-                <span className="text-primary block">Automation</span>
+              <h1 className="text-5xl md:text-5xl font-bold text-balance ">
+                WhatsApp  <span className="text-primary ">Automation</span>
               </h1>
 
               <p className="text-xl text-muted-foreground max-w-lg">
@@ -93,51 +92,77 @@ const [isLinuxOpen, setIsLinuxOpen] = useState(false)
                 place.
               </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
 
-  {/* 🪟 WINDOWS - direct download */}
-  <a
-    href="/downloads/WhatsApp-Automated-Setup-1.0.3.exe"
-    className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
-  >
-    <Download className="w-5 h-5 group-hover:animate-bounce" />
-    Download for Windows
-  </a>
+                {/* 🪟 WINDOWS - direct download */}
+                <a
+                  href="https://github.com/ourswebsolutions-ux/whatsapp-automated/releases/download/v1.0.4/WhatsApp-Automated-Setup-1.0.4.exe"
+                  download
+                  className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
+                >
+                  <Download className="w-5 h-5 group-hover:animate-bounce" />
+                  Download for Windows
+                </a>
 
-  {/* 🐧 LINUX DROPDOWN */}
-  <div className="relative">
 
-    <button
-      onClick={() => setIsLinuxOpen(!isLinuxOpen)}
-      className="bg-black text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
-    >
-      <Terminal className="w-5 h-5" />
-      Download for Linux
-    </button>
+                {/* 🐧 LINUX DROPDOWN */}
+                <div className="relative">
 
-    {isLinuxOpen && (
-      <div className="absolute mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
+                  <button
+                    onClick={() => setIsLinuxOpen(!isLinuxOpen)}
+                    className="bg-black text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <Terminal className="w-5 h-5" />
+                    Download for Linux
+                  </button>
 
-        <a
-          href="/downloads/WhatsApp-Automated-1.0.3.AppImage"
-          className="block px-4 py-3 hover:bg-muted transition"
-        >
-          AppImage (Universal)
-        </a>
+                  {isLinuxOpen && (
+                    <div className="absolute mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
 
-        <a
-          href="/downloads/whatsapp-automated_1.0.3_amd64.deb"
-          className="block px-4 py-3 hover:bg-muted transition"
-        >
-          Debian (.deb)
-        </a>
+                      <a
+                        href="https://github.com/ourswebsolutions-ux/whatsapp-automated/releases/download/v1.0.4/WhatsApp-Automated-1.0.4.AppImage"
+                        download
+                        className="block px-4 py-3 hover:bg-muted transition"
+                      >
+                        AppImage (Universal)
+                      </a>
 
-      </div>
-    )}
+                      <a
+                        href="https://github.com/ourswebsolutions-ux/whatsapp-automated/releases/download/v1.0.4/whatsapp-automated_1.0.4_amd64.deb"
+                        download
+                        className="block px-4 py-3 hover:bg-muted transition"
+                      >
+                        Debian (.deb)
+                      </a>
 
-  </div>
+                    </div>
+                  )}
 
-</div>
+                </div>
+
+
+
+              </div>
+
+              <div className="relative">
+                <Link
+                  href="https://outreach.axorawebsolutions.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-semibold underline underline-offset-4 hover:text-primary/80 transition-colors"
+                >
+                  <button
+
+                    className="bg-gray text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <Terminal className="w-5 h-5" />
+                    Email Automation Software
+                  </button>
+                </Link>
+
+              </div>
+
+
 
               <div className="pt-4">
                 <p className="text-sm text-muted-foreground">
@@ -153,15 +178,15 @@ const [isLinuxOpen, setIsLinuxOpen] = useState(false)
             </div>
 
             {/* Right Side Preview */}
-           <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden border border-primary/30 animate-float bg-card">
-  <Image
-    src="/hero.png"
-    alt="WhatsApp Automation Desktop Preview"
-    fill
-    priority
-    className="object-contain p-4 hover:scale-105 transition-transform duration-300"
-  />
-</div>          </div>
+            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden border border-primary/30 animate-float bg-card">
+              <Image
+                src="/hero.png"
+                alt="WhatsApp Automation Desktop Preview"
+                fill
+                priority
+                className="object-contain p-4 hover:scale-105 transition-transform duration-300"
+              />
+            </div>          </div>
         </div>
       </section>
 
@@ -345,18 +370,18 @@ const [isLinuxOpen, setIsLinuxOpen] = useState(false)
       {/* Footer */}
       <footer className="border-t border-border py-12 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col  items-center gap-4">
             <div>
               <p className="text-muted-foreground text-sm">
                 © {new Date().getFullYear()} WhatsApp Automation Software. All rights reserved.
               </p>
             </div>
-            <button
+            {/* <button
               onClick={() => setIsAdminModalOpen(true)}
               className="text-xs px-3 py-2 rounded-md border border-border hover:border-primary/50 transition-colors text-muted-foreground hover:text-foreground"
             >
               Admin
-            </button>
+            </button> */}
           </div>
         </div>
       </footer>
