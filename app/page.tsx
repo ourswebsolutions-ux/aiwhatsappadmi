@@ -1,15 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import Link from "next/link";
-import Image from "next/image";   // Next.js Image
+import Link from 'next/link'
+import Image from 'next/image'
 
 import {
   MessageSquare,
   QrCode,
   Users,
   Send,
-  Image as ImageIcon,        // Renamed to avoid conflict
+  Image as ImageIcon,
   BarChart3,
   FileText,
   Zap,
@@ -28,7 +28,7 @@ import {
   Globe,
   Download,
   Terminal,
-} from "lucide-react";
+} from 'lucide-react'
 
 import { AdminPasswordModal } from '@/components/AdminPasswordModal'
 import { Navbar } from '@/components/Navbar'
@@ -70,11 +70,10 @@ const futureFeatures = [
 export default function Home() {
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false)
   const [isHelpOpen, setIsHelpOpen] = useState(false)
-  const [showHelpPage, setShowHelpPage] = useState(false);
   const [isLinuxOpen, setIsLinuxOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
@@ -82,19 +81,18 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-5xl font-bold text-balance ">
-                WhatsApp  <span className="text-primary ">Automation</span>
+              <h1 className="text-5xl md:text-5xl font-bold text-balance">
+                WhatsApp <span className="text-primary">Automation</span>
               </h1>
 
               <p className="text-xl text-muted-foreground max-w-lg">
                 Automate your WhatsApp messaging with our powerful desktop software.
-                Send bulk messages, manage contacts, and track progress all in one
-                place.
+                Send bulk messages, manage contacts, and track progress all in one place.
               </p>
 
+              {/* Primary download buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-
-                {/* 🪟 WINDOWS - direct download */}
+                {/* Windows */}
                 <a
                   href="/download/windows"
                   download
@@ -104,69 +102,64 @@ export default function Home() {
                   Download for Windows
                 </a>
 
-
-                {/* 🐧 LINUX DROPDOWN */}
+                {/* Linux dropdown */}
                 <div className="relative">
-
                   <button
                     onClick={() => setIsLinuxOpen(!isLinuxOpen)}
-                    className="bg-black text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                    className="bg-black text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2 w-full sm:w-auto"
                   >
                     <Terminal className="w-5 h-5" />
                     Download for Linux
                   </button>
 
                   {isLinuxOpen && (
-                    <div className="absolute mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
-
+                    <div className="absolute mt-2 w-full sm:w-56 bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
                       <a
-                        href="download/linux/appimage"
+                        href="/download/linux/appimage"
                         download
                         className="block px-4 py-3 hover:bg-muted transition"
+                        onClick={() => setIsLinuxOpen(false)}
                       >
                         AppImage (Universal)
                       </a>
-
                       <a
                         href="/download/linux/deb"
                         download
                         className="block px-4 py-3 hover:bg-muted transition"
+                        onClick={() => setIsLinuxOpen(false)}
                       >
                         Debian (.deb)
                       </a>
-
                     </div>
                   )}
-
                 </div>
-
-
-
               </div>
 
-              <div className="relative">
-                <Link
+              {/* Secondary actions */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
                   href="https://outreach.axorawebsolutions.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary font-semibold underline underline-offset-4 hover:text-primary/80 transition-colors"
+                  className="bg-yellow-400 text-red-500 border-2 border-red-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  <button
+                  <Terminal className="w-5 h-5" />
+                   Automation Software
+                </a>
 
-                    className="bg-gray text-green-500 border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <Terminal className="w-5 h-5" />
-                    Email Automation Software
-                  </button>
-                </Link>
-
+                <a
+                  href="/download/facebook/windows"
+                  download
+                  className="bg-blue-500 text-primary-foreground px-6 py-3 border-2 border-green-500 rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
+                >
+                  <Download className="w-5 h-5 group-hover:animate-bounce" />
+                   Facebook Automation
+                </a>
               </div>
 
-
-
-              <div className="pt-4">
+              <div className="pt-2">
                 <p className="text-sm text-muted-foreground">
-                  Need help setting up the software?{" "}
+                  Need help setting up the software?{' '}
                   <Link
                     href="/doc"
                     className="text-primary font-semibold underline underline-offset-4 hover:text-primary/80 transition-colors"
@@ -186,7 +179,8 @@ export default function Home() {
                 priority
                 className="object-contain p-4 hover:scale-105 transition-transform duration-300"
               />
-            </div>          </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -246,7 +240,7 @@ export default function Home() {
                   <Image
                     src={screenshot.image}
                     alt={screenshot.title}
-                    fill={true}
+                    fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -270,15 +264,13 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {futureFeatures.map((feature, i) => {
-              return (
-                <FutureFeatureCard
-                  key={i}
-                  icon={feature.icon}
-                  title={feature.title}
-                />
-              )
-            })}
+            {futureFeatures.map((feature, i) => (
+              <FutureFeatureCard
+                key={i}
+                icon={feature.icon}
+                title={feature.title}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -359,7 +351,10 @@ export default function Home() {
                   className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none"
                 />
               </div>
-              <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+              <button
+                type="button"
+                className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              >
                 Send Message
               </button>
             </form>
@@ -370,43 +365,48 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border py-12 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col  items-center gap-4">
-            <div>
-              <p className="text-muted-foreground text-sm">
-                © {new Date().getFullYear()} WhatsApp Automation Software. All rights reserved.
-              </p>
-            </div>
-            {/* <button
-              onClick={() => setIsAdminModalOpen(true)}
-              className="text-xs px-3 py-2 rounded-md border border-border hover:border-primary/50 transition-colors text-muted-foreground hover:text-foreground"
-            >
-              Admin
-            </button> */}
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} WhatsApp Automation Software. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
 
-      {/* Admin Modal */}
       <AdminPasswordModal
         isOpen={isAdminModalOpen}
         onClose={() => setIsAdminModalOpen(false)}
       />
 
-      {/* Help Button & Modal */}
       <HelpButton onClick={() => setIsHelpOpen(true)} />
       <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
 
       <style jsx>{`
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
         }
-        .animate-fade-in { animation: fade-in 0.8s ease-out; }
-        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out;
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
       `}</style>
     </div>
   )
